@@ -2,10 +2,11 @@ import React from "react";
 import "./App.css";
 
 function App() {
+  let city = prompt("What city do you want to check the weather for?");
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("https://api.codetabs.com/v1/weather?city=seattle")
+    fetch(`https://api.codetabs.com/v1/weather?city=${city}`)
       .then((res) => res.json())
       .then((data) => setData(data));
       console.log(data);
