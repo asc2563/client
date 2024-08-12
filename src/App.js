@@ -3,6 +3,12 @@ import "./App.css";
 
 function App() {
   let city = prompt("What city do you want to check the weather for?");
+  if (city = null || city == "") {
+    city = "Seattle";
+    alert("You didn't enter a city, so we will use Seattle instead");
+  } else {
+    city = city;
+  }
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
