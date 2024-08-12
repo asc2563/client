@@ -3,7 +3,8 @@ import "./App.css";
 
 function App() {
   const [data, setData] = React.useState(null);
-  const [city, setCity] = React.useState('');
+  const [city, setCity] = React.useState(localStorage.city || '');
+
   React.useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={handleCityChange}>set City</button>
+        <button onClick={handleCityChange}>Change City</button>
         <p>temperature fahrenheit: {!data ? "Loading..." : data.tempF}</p>
         <br></br>
         <p>temperature celsius: {!data ? "Loading..." : data.tempC}</p>
